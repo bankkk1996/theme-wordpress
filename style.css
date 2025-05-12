@@ -64,12 +64,11 @@ a{
 .lang-switcher a {
   text-decoration: none;
   color: #333;
-  padding: 0 8px;
+  padding: 0 6px;
 }
 
 .lang-switcher span {
-  margin: 0 4px;
-  color: #aaa;
+  color: #999;
 }
 
 /* Container สำหรับเมนู */

@@ -36,11 +36,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
 
         <!-- Language Selector -->
-        <div class="lang-switcher">
-          <a href="/th">TH</a>
-          <span>|</span>
-          <a href="/en">EN</a>
-        </div>
+        <?php
+$current_lang = pll_current_language(); // ดึงภาษาปัจจุบัน
+
+// ตั้งค่าภาษาที่ต้องการแสดง
+$languages = [
+  'th' => ['slug' => 'th', 'label' => 'TH', 'url' => pll_home_url('th')], 
+  'en' => ['slug' => 'en', 'label' => 'EN', 'url' => pll_home_url('en')],
+];
+
+echo '<div class="lang-switcher">';
+$index = 0;
+foreach ($languages as $lang) {
+  $is_active = ($current_lang === $lang['slug']) ? 'class="active"' : '';
+  echo '<a href="' . esc_url($lang['url']) . '" ' . $is_active . '>' . esc_html($lang['label']) . '</a>';
+  if (++$index < count($languages)) {
+    echo ' <span>|</span> ';
+  }
+}
+echo '</div>';
+?>
       </div>
 
       
