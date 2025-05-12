@@ -25,34 +25,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <section class="site-header">
-  <!-- Row: Logo + Language -->
-  <div class="header-top">
-    <!-- Logo -->
-    <div class="logo">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="<?php bloginfo( 'name' ); ?>">
-      </a>
-    </div>
+    <div class="container">
+    <!-- Row: Logo + Language -->
+      <div class="header-top">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="<?php bloginfo( 'name' ); ?>">
+          </a>
+        </div>
 
-    <!-- Language Selector -->
-    <div class="lang-switcher">
-      <a href="/th">TH</a>
-      <span>|</span>
-      <a href="/en">EN</a>
-    </div>
-  </div>
+        <!-- Language Selector -->
+        <div class="lang-switcher">
+          <a href="/th">TH</a>
+          <span>|</span>
+          <a href="/en">EN</a>
+        </div>
+      </div>
 
-  <!-- Navigation Menu -->
-  <nav class="main-menu">
-    <?php 
-      wp_nav_menu(array(
-        'menu' => 'primary',
-        'container' => '',
-        'theme_location' => 'primary',
-        'items_wrap' => '<ul class="menu-primary">%3$s</ul>'
-      ));
-    ?>
-  </nav>
+      
+    </div>
+    <!-- Navigation Menu -->
+      
+ 
+</section>
+<section class="site-menu">
+    <div class="container">
+      <nav class="main-menu">
+        <?php 
+          wp_nav_menu(array(
+            'menu' => 'primary',
+            'container' => '',
+            'theme_location' => 'primary',
+            'items_wrap' => '<ul class="menu-primary">%3$s</ul>'
+          ));
+        ?>
+      </nav>
+    </div>
 </section>
 
 

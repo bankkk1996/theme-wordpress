@@ -11,8 +11,8 @@ Author: Naritcha
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sarabun', sans-serif;
-    text-decoration: none !important;
 }
+
 img.custom-logo{
 	max-height:112.33px;
 }
@@ -30,12 +30,22 @@ a{
     height: 100%;
 }
 
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
 
 /* Header Start */
 
 .site-header {
-  background: #f9f9f9;
-  border-bottom: 1px solid #ddd;
+  background: #fff;
+  /* border-bottom: 1px solid #ddd; */
+  font-family: sans-serif;
+}
+.site-menu {
+  background: #F7F5F5;
+  /* border-bottom: 1px solid #ddd; */
   font-family: sans-serif;
 }
 
@@ -64,7 +74,7 @@ a{
 
 /* Container สำหรับเมนู */
 .main-menu {
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 0 32px; /* เพิ่ม padding ให้ดูพอดี */
 }
 
@@ -89,7 +99,7 @@ a{
   display: block;
   text-decoration: none;
   color: #333;
-  font-weight: 500;
+  font-weight: 200;
   padding: 0 20px;
 }
 
@@ -99,45 +109,85 @@ a{
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
-  padding: 10px 0;
+  background: #F7F5F5;
+  padding: 0;
   min-width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
   z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .menu-primary li:hover > ul {
   display: block;
 }
 
+/* Submenu ชั้นถัดไป (เช่น ul ใน ul) */
 .menu-primary li ul li {
-  padding: 10px 20px;
-  text-align: left;
+  position: relative;
 }
 
-.menu-primary li ul li a {
-  color: #333;
-  text-decoration: none;
+.menu-primary li ul li ul {
+  top: 0;
+  left: 100%;
+  display: none;
+  position: absolute;
+  min-width: 100%;
+  background: #F7F5F5;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+
+.menu-primary li ul li:hover > ul {
   display: block;
 }
 
-.menu-primary li ul li a:hover {
-  background: #f0f0f0;
+/* Submenu links */
+.menu-primary li ul li a {
+  color: #707070;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
 }
 
+.menu-primary li ul li:hover {
+  background: #fff;
+}
 
 .menu-primary > li {
-  flex: 1 1 0;
-  text-align: center;
-  padding: 16px 0;
   position: relative;
-  border-left: 1px solid #ccc; /* เส้นคั่นด้านซ้าย */
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  text-align: center;
 }
 
-/* ลบเส้นคั่นของเมนูแรก */
-.menu-primary > li:last-child {
-  border-right: 1px solid #ccc;
+/* เส้นซ้าย */
+.menu-primary > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #eae6e6;
 }
+
+/* เส้นขวา */
+.menu-primary > li:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #eae6e6;
+}
+
+
+
 
 /* Header End */
 
@@ -540,9 +590,9 @@ section.footer{
 	height:70px;
 	background: #F7F5F5;
 }
-a:link,a,a:hover{
+/* a:link,a,a:hover{
 	color: #273171 !important;
-}
+} */
 .footer-bar{
 	margin: 0 9.3%;
 	display:flex;
